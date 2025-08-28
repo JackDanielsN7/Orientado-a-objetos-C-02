@@ -4,7 +4,7 @@ public class Persona {
     private String nombre;
     protected String apellido;
     private int edad;
-    
+
 
 
     void saludo(){
