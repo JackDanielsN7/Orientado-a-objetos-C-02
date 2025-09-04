@@ -1,4 +1,4 @@
-package peru.edu.upeu.asistencia;
+package pe.edu.upeu.asistencia;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

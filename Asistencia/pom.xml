@@ -8,11 +8,11 @@
 		<version>3.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>peru.edu.upeu</groupId>
+	<groupId>pe.edu.upeu</groupId>
 	<artifactId>Asistencia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Asistencia</name>
-	<description>Oblion Code</description>
+	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -47,7 +47,6 @@
 			<artifactId>javafx-controls</artifactId>
 			<version>21</version>
 		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
 		<dependency>
@@ -87,7 +86,7 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-					<mainClass>peru.edu.upeu.asistencia.Aplication</mainClass>
+					<mainClass>pe.edu.upeu.asistencia.Aplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
