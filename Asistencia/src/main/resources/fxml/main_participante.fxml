@@ -44,20 +44,20 @@
                                  </font>
                               </Label>
                               <Label text="DNI :" GridPane.rowIndex="1" />
-                              <Label text="Nombre :" GridPane.rowIndex="2" />
+                              <Label fx:id="txtNombres" text="Nombre :" GridPane.rowIndex="2" />
                               <Label text="Apellido :" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtDni" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
                               <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
                               <Button mnemonicParsing="false" text="Buscar" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="5.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Label text="Carrera :" GridPane.rowIndex="4" />
-                              <Label text="Tipo Participante :" GridPane.rowIndex="5" />
-                              <ComboBox layoutX="25.0" layoutY="25.0" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                              <ComboBox maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                              <Label  text="Carrera :" GridPane.rowIndex="4" />
+                              <Label  text="Tipo Participante :" GridPane.rowIndex="5" />
+                              <ComboBox fx:id="cbxCarrera" layoutX="25.0" layoutY="25.0" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                              <ComboBox fx:id="cbxTipoParticipante" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                               <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                  <padding>
                                     <Insets bottom="5.0" />
@@ -67,12 +67,7 @@
                         </GridPane>
                         <AnchorPane>
                            <children>
-                              <TableView layoutX="10.0" layoutY="16.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-                                <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
-                                </columns>
-                              </TableView>
+                              <TableView fx:id="tableView" layoutX="10.0" layoutY="16.0" maxWidth="1.7976931348623157E308" prefWidth="700.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                            </children></AnchorPane>
                      </children>
                   </HBox>
