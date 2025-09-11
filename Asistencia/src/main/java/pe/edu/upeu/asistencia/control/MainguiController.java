@@ -6,11 +6,14 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.stereotype.Controller;
+import pe.edu.upeu.asistencia.enums.Facultad;
 
 import java.io.IOException;
 import java.util.Map;
@@ -25,19 +28,49 @@ public class MainguiController {
     @FXML
     private MenuBar menuBar;
 
+    ComboBox<String> comboBox=new ComboBox<>();
+    private CustomMenuItem CustomMenuEstilo = new CustomMenuItem(comboBox);
+    private Menu menuEstilo= new Menu("Cambio estilo: ");
+
     @FXML
     private TabPane tabPane;
+    @FXML
+    BorderPane bp;
 
     @Autowired
     private ApplicationContext context;
 
     @FXML
     public void initialize() {
+        comboBox.getItems().addAll("Estilo por defecto", "Estilo Oscuro","Estilo Azul","Estilo Verde","Estilo Rosado");
+        comboBox.setOnAction((e) -> {  cambiarEstilo(); });
+        CustomMenuEstilo.setHideOnClick(false);
+        menuEstilo.getItems().addAll(CustomMenuEstilo);
+        menuBar.getMenus().addAll(menuEstilo);
+
         MenuItemListener mil=new MenuItemListener();
         menuItem1.setOnAction(mil::handle);
         menuItem2.setOnAction(mil::handle);
         menuItem3.setOnAction(mil::handle);
 
+
+    }
+    @FXML
+    public void cambiarEstilo(){
+        String estiloSeleccionado=comboBox.getSelectionModel().getSelectedItem();
+        Scene scene=bp.getScene();
+        scene.getStylesheets().clear();
+        switch(estiloSeleccionado){
+            case "Estilo Azul": scene.getStylesheets().add(getClass().getResource("/css/estilo-azul.css").toExternalForm());
+            break;
+            case "Estilo Oscuro": scene.getStylesheets().add(getClass().getResource("/css/estilo-oscuro.css").toExternalForm());
+            break;
+            case "Estilo Rosado": scene.getStylesheets().add(getClass().getResource("/css/estilo-rosado.css").toExternalForm());
+            break;
+            case "Estilo Verde": scene.getStylesheets().add(getClass().getResource("/css/estilo-verde.css").toExternalForm());
+            default: break;
+
+        }
 
     }
 
